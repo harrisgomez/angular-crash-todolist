@@ -16,4 +16,15 @@ export class TodoItemComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    // The [ngClass] directive used in the html allows for dynamic class binding of its methods
+    setClasses() {
+        // Set true/false values for desired styles
+        let classes = {
+            todo: true, // applies the todo class style to all todo div items
+            'is-complete': this.item.completed // hyphenated strings require quotes
+        }
+
+        return classes;
+    }
+
 }
