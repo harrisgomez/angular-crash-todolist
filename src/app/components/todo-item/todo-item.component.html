@@ -1,8 +1,8 @@
 <!-- The ngClass directive can be used to generate classes dynamically by setting it to a method defined in our class -->
 <div [ngClass]='setClasses()'>
     <p>
-        <input type="checkbox" />
+        <input (change)='onToggle(item)' type="checkbox" />
         {{ item.title }}
-        <button class="del">x</button>
+        <button (click)='onDelete(item)' class="del">x</button>
     </p>
 </div>

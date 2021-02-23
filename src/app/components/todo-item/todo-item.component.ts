@@ -7,7 +7,7 @@ import { Todo } from '../../models/Todo';
     styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
-    @Input() item:Todo;
+    @Input() item: Todo;
 
     constructor() {
         this.item = new Todo();
@@ -25,6 +25,15 @@ export class TodoItemComponent implements OnInit {
         }
 
         return classes;
+    }
+
+    onToggle(item: any) {
+        console.log('toggle');
+        
+    }
+
+    onDelete(item: any) {
+        console.log('delete');
     }
 
 }
