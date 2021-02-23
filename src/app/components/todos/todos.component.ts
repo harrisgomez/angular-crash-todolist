@@ -8,7 +8,7 @@ import { Todo } from '../../models/Todo';
     styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-    todos:Todo[]
+    todos:Todo[];
 
     // Use constructor for initializing properties and importing services
     constructor(private todoService:TodoService) {
@@ -28,5 +28,11 @@ export class TodosComponent implements OnInit {
         // Deletes from the server
         // Create .deleteTodo() in the service
         this.todoService.deleteTodo(item).subscribe();
+    }
+
+    addItem(item:Todo) {
+        this.todoService.addTodo(item).subscribe(item => {
+            this.todos.push(item);
+        });
     }
 }
