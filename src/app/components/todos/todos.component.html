@@ -1,3 +1,7 @@
 <!-- To render items via [todo]='todo', the Input component must be imported into component selecting this element (todo-item.component.ts) -->
 <!-- This is the alternative to using <ul>/<li> to list items -->
-<app-todo-item *ngFor='let td of todos' [item]='td'></app-todo-item>
+<app-todo-item
+    *ngFor='let td of todos'
+    [item]='td'
+    (deleteItem)='deleteItem($event)'
+></app-todo-item>

@@ -12,7 +12,7 @@ export class TodosComponent implements OnInit {
 
     // Use constructor for initializing properties and importing services
     constructor(private todoService:TodoService) {
-        this.todos = []
+        this.todos = [];
     }
 
     ngOnInit(): void {
@@ -21,4 +21,12 @@ export class TodosComponent implements OnInit {
         });
     }
 
+    deleteItem(item:Todo) {
+        // Deletes from the UI
+        this.todos = this.todos.filter(t => t.id !== item.id);
+
+        // Deletes from the server
+        // Create .deleteTodo() in the service
+        this.todoService.deleteTodo(item).subscribe();
+    }
 }
